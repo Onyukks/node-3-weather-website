@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //define path for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -27,20 +28,20 @@ app.get('',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.render('about',{
         title:'About',
-        name:'Christian Eriksen'
+        name:'Ony'
     })
 })
 app.get('/help',(req,res)=>{
     res.render('help',{
         helpText:'This is some helpful text',
         title:'Help',
-        name:'Christian Eriksen'
+        name:'Ony'
     })
 })
 app.get('/help/*',(req,res)=>{
     res.render('404',{
         title:'404',
-        name:'Christian Eriksen',
+        name:'Ony',
         errorMessage:'Help article not found'
 
     })
@@ -67,10 +68,10 @@ app.get('/weather',(req,res)=>{
 app.get('*',(req,res)=>{
     res.render('404',{
         title:'404',
-        name:'Christian Eriksen',
+        name:'Ony',
         errorMessage:'Page not found'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server started at port 3000')
+app.listen(port,()=>{
+    console.log(`Server started at port ${port}`)
 })
