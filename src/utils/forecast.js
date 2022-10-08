@@ -8,11 +8,12 @@ const weather = (city,callback)=>{
              callback('Unable to find location. Try another search',undefined,undefined)
         }
         else{
-        callback(undefined,`It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike}`,body.request.query
+            console.log(body)
+        callback(undefined,`${body.current.weather_descriptions}, It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out. The humidity is ${body.current.humidity}%`,body.request.query
         )
 
         }
     })
 }
-
+``
 module.exports = weather

@@ -22,7 +22,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('',(req,res)=>{
     res.render('index',{
         title:'Weather',
-        name:'Christian Erkisen'
+        name:'Ony'
     })
 })
 app.get('/about',(req,res)=>{
@@ -63,6 +63,7 @@ app.get('/weather',(req,res)=>{
             address:city
             
         })
+       
     })
 })
 app.get('*',(req,res)=>{
